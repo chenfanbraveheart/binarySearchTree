@@ -16,4 +16,19 @@ object Util {
       ).toList
     }
   }
+
+  def logErrorAndExit(str: String): Unit = {
+    println("Error: " + str)
+    println("Usage: Main textfile")
+    System.exit(1)
+  }
+
+  def logWarning(str: String): Unit = {
+    println("Warning: " + str)
+  }
+
+  def logInfo(str: String): Unit = {
+    println("Info: " + str)
+  }
+
 }
