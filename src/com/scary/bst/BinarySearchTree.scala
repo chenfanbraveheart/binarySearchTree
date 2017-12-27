@@ -1,4 +1,4 @@
-package other
+package com.scary.bst
 
 class BinarySearchTree {
 
@@ -14,12 +14,12 @@ class BinarySearchTree {
 
   // search word
   def find(word: String): Long = {
-
+    1L
   }
 
   //print a tree
   override def toString: String = {
-
+    ""
   }
 }
 

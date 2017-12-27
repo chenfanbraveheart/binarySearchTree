@@ -1,4 +1,4 @@
-package other
+package com.scary.bst
 
 class Main {
 

@@ -1,4 +1,4 @@
-package other
+package com.scary.bst
 
 object Test {
   def main(args: Array[String]): Unit = {
