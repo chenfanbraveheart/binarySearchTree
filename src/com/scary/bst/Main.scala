@@ -39,11 +39,9 @@ object Main {
           case "add" =>
             val words = command.substring(4).trim.split(" ").toList
             tree.addAll(words)
-            Util.logInfo("Add words successfully.")
           case "remove" =>
             val words = command.substring(7).trim.split(" ").toList
             tree.removeAll(words)
-            Util.logInfo("Remove words successfully.")
           case "find" =>
             val word = command.substring(5).trim
             val times = tree.find(word)

@@ -35,6 +35,7 @@ class BinarySearchTree() {
       }
       currNode.times += 1
     }
+    Util.logInfo(s"Add word ${word} successfully.")
   }
 
   // add multi words
@@ -66,14 +67,14 @@ class BinarySearchTree() {
       while (currNode.word != word) {
         currNode = if (word < currNode.word) {
           if (null == currNode.leftChild) {
-            Util.logWarning(s"Remove '${word}' failed,this word does not exist")
+            Util.logWarning(s"Remove failed,word ${word} does not exist.")
             return
           }
           flag = -1
           currNode.leftChild
         } else {
           if (null == currNode.rightChild) {
-            Util.logWarning(s"Remove '${word}' failed,this word does not exist")
+            Util.logWarning(s"Remove failed,word ${word} does not exist.")
             return
           }
           flag = 1
@@ -103,6 +104,7 @@ class BinarySearchTree() {
           currNode.leftChild
         }
       }
+      Util.logInfo(s"Remove word ${word} successfully.")
     }
   }
 
@@ -113,9 +115,10 @@ class BinarySearchTree() {
   }
 
   // reset tree
-  def clear():Unit = {
+  def clear(): Unit = {
     root = TreeNode("root", -1, null, null, null)
   }
+
   // search word
   def find(word: String): Int = {
 
@@ -140,7 +143,7 @@ class BinarySearchTree() {
   }
 
   def printTree(): Unit = {
-    if(root.times > 0){
+    if (root.times > 0) {
       inorder(root)
       println
     } else {
