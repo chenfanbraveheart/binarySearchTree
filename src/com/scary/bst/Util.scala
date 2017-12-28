@@ -6,7 +6,7 @@ object Util {
 
   // Read words from textfile
   def parseFile(file: String): List[String] = {
-    if(file == null) {
+    if (file == null) {
       null
     } else {
       val wordMatch = """([A-Za-z])+""".r
@@ -17,18 +17,12 @@ object Util {
     }
   }
 
-  def logErrorAndExit(str: String): Unit = {
-    println("Error: " + str)
-    println("Usage: Main textfile")
-    System.exit(1)
-  }
-
   def logWarning(str: String): Unit = {
     println("Warning: " + str)
   }
 
   def logInfo(str: String): Unit = {
-    println("Info: " + str)
+    println(str)
   }
 
 }

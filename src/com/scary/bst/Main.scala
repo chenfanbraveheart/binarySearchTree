@@ -24,10 +24,11 @@ object Main {
         |  stop <file>              read a stop use words from a file
         |  print                    print inorder of tree
         |  clear                    clear all word in tree
+        |  exit                     exit the program
       """.stripMargin)
 
     while (true) {
-      try{
+      try {
         print("-> ")
         val command = StdIn.readLine().trim
 
@@ -35,7 +36,7 @@ object Main {
           case "read" =>
             val file = command.substring(5).trim
             tree.addAll(Util.parseFile(file))
-            Util.logInfo("Read file successfully.")
+            Util.logInfo(s"Read file successfully.")
           case "add" =>
             val words = command.substring(4).trim.split(" ").toList
             tree.addAll(words)
@@ -45,26 +46,28 @@ object Main {
           case "find" =>
             val word = command.substring(5).trim
             val times = tree.find(word)
-            if(times > 0) {
+            if (times > 0) {
               Util.logInfo(s"${word} ${times}")
-            }else {
+            } else {
               Util.logInfo(s"Word ${word} does not exist.")
             }
           case "stop" =>
             val file = command.substring(5).trim
             tree.removeAll(Util.parseFile(file))
-            Util.logInfo("Remove all stop words successfully.")
+            Util.logInfo("Remove all stop words.")
           case "print" =>
             tree.printTree
           case "clear" =>
             tree.clear
             Util.logInfo("clear all words.")
+          case "exit" =>
+            System.exit(1)
           case "" =>
 
           case _ =>
             Util.logWarning("Unknow command,please retry.")
         }
-      }catch {
+      } catch {
         case NonFatal(e) =>
           e.printStackTrace()
           println

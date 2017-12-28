@@ -35,7 +35,7 @@ class BinarySearchTree() {
       }
       currNode.times += 1
     }
-    Util.logInfo(s"Add word ${word} successfully.")
+    Util.logInfo(s"Add word ${word}.")
   }
 
   // add multi words
@@ -104,7 +104,7 @@ class BinarySearchTree() {
           currNode.leftChild
         }
       }
-      Util.logInfo(s"Remove word ${word} successfully.")
+      Util.logInfo(s"Remove word ${word}.")
     }
   }
 
